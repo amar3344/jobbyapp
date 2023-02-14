@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import {Redirect} from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 import './index.css'
 
@@ -7,6 +9,11 @@ const Login = props => {
   const [pass, setPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
   const [isDisplayError, setDisplayError] = useState(false)
+
+  const jToken = Cookies.get('jwt_token')
+  if (jToken !== undefined) {
+    return <Redirect to="/" />
+  }
 
   const getUserName = e => {
     setName(e.target.value)
@@ -17,6 +24,8 @@ const Login = props => {
   }
 
   const getFormSuccessfully = data => {
+    const token = data.jwt_token
+    Cookies.set('jwt_token', token, {expires: 1})
     setDisplayError(false)
     const {history} = props
     history.replace('/')

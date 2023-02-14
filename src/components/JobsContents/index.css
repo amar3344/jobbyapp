@@ -1,0 +1,28 @@
+.jobs-content-container {
+  min-width: calc(100% - 200px);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid #2c364c;
+  border-radius: 5px;
+}
+.search-input {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  height: 100%;
+  padding: 0px 5px;
+}
+
+.search-image {
+  width: 30px;
+  height: 100%;
+  color: #fff;
+  background-color: #7e858e;
+}
