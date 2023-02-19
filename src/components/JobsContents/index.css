@@ -1,7 +1,9 @@
-.jobs-content-container {
-  min-width: calc(100% - 200px);
+.jobs-right-container {
+  width: 100%;
   display: flex;
   justify-content: flex-start;
+  padding: 0px;
+  margin: 0px;
 }
 
 .search-container {

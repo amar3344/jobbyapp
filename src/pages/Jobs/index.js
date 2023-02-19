@@ -10,8 +10,12 @@ const Jobs = () => (
       <Navbar />
     </div>
     <div className="job-content-container">
-      <SideNav />
-      <JobsContents />
+      <div className="left-side-container">
+        <SideNav />
+      </div>
+      <div className="right-side-container">
+        <JobsContents />
+      </div>
     </div>
   </div>
 )

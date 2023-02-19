@@ -1,6 +1,5 @@
 .aside-container {
-  width: 170px;
-  padding: 20px 20px 30px 30px;
+  width: 100%;
 }
 
 .profile-container {
@@ -22,9 +21,6 @@
 .employment-container {
   margin: 0px;
   padding: 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
 }
 
 .type-employment-container {
@@ -41,10 +37,11 @@
 }
 
 .employment-container ul {
-  display: flex;
-  flex-direction: column;
   padding: 0px;
   margin: 0px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .employment-container ul li {
