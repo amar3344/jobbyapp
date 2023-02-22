@@ -6,9 +6,9 @@ const SideNav = () => (
       <h1>profile-container</h1>
     </div>
     <hr />
-    <div className="employment-container">
-      <p>Type of Employment</p>
-      <ul>
+    <div className="type-employment-container">
+      <p className="type-employment-text">Type of Employment</p>
+      <ul className="employment-container">
         <li>
           <input type="checkbox" id="fulltime" className="checkbox" />
           <label htmlFor="fulltime" className="label-text">
@@ -37,8 +37,8 @@ const SideNav = () => (
     </div>
     <hr />
     <div className="type-employment-container">
-      <p>Type of Employment</p>
-      <ul>
+      <p className="type-employment-text">Type of Employment</p>
+      <ul className="employment-container">
         <li>
           <input
             type="radio"

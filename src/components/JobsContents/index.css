@@ -1,9 +1,11 @@
 .jobs-right-container {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   padding: 0px;
   margin: 0px;
+  overflow: hidden;
 }
 
 .search-container {
@@ -27,4 +29,11 @@
   height: 100%;
   color: #fff;
   background-color: #7e858e;
+}
+
+.job-card-container {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
 }
