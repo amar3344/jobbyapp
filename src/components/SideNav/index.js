@@ -1,9 +1,10 @@
+import UserProfile from '../UserProfile/userprofile'
 import './index.css'
 
 const SideNav = () => (
   <aside className="aside-container">
     <div className="profile-container">
-      <h1>profile-container</h1>
+      <UserProfile />
     </div>
     <hr />
     <div className="type-employment-container">

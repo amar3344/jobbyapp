@@ -1,0 +1,24 @@
+.profile-container-a {
+  padding: 15px 0px 10px 10px;
+}
+
+.profile-container-a img {
+  width: 30px;
+  margin: 0px;
+}
+
+.profile-container-a h3 {
+  font-size: 13px;
+  color: #6366f1;
+  font-weight: bold;
+  font-family: 'Roboto';
+  margin: 0px;
+}
+
+.profile-container-a p {
+  font-size: 11px;
+  color: #2c364c;
+  font-weight: bold;
+  font-family: 'Roboto';
+  margin: 0px;
+}

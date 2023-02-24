@@ -25,7 +25,7 @@ const JobsContents = () => {
       const res = await fetch(url, options)
       const data = await res.json()
       if (res.ok === true) {
-        console.log(data)
+        // console.log(data)
         setJobsList(data.jobs)
         setIsLoading(false)
       }

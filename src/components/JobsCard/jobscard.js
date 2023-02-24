@@ -6,7 +6,7 @@ import './jobcard.css'
 
 const JobsCard = props => {
   const {details} = props
-  console.log(details)
+  //   console.log(details)
   return (
     <li className="job-card">
       <div className="job-header-container">
