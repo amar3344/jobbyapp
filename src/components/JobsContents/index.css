@@ -9,27 +9,31 @@
 }
 
 .search-container {
-  width: 200px;
+  min-width: 200px;
+  max-width: 300px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 30px;
   background-color: transparent;
   border: 1px solid #2c364c;
   border-radius: 5px;
+  flex-grow: 1;
 }
 .search-input {
   background-color: transparent;
   border: none;
   color: #fff;
   height: 100%;
+  width: 100%;
   padding: 0px 5px;
 }
 
 .search-image {
-  width: 30px;
-  height: 100%;
+  width: 25px;
   color: #fff;
-  background-color: #7e858e;
+  height: 100%;
+  background-color: #1f1e1e;
 }
 
 .job-card-container {
@@ -37,4 +41,5 @@
   padding: 0px;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
