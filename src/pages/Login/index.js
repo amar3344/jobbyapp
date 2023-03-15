@@ -45,6 +45,7 @@ const Login = props => {
     const url = 'https://apis.ccbp.in/login'
     const res = await fetch(url, options)
     const data = await res.json()
+    // console.log(data)
 
     if (res.status === 200) {
       getFormSuccessfully(data)

@@ -79,3 +79,10 @@
   font-weight: 300;
   font-size: 12px;
 }
+
+.list-job-button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+}

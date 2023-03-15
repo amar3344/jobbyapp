@@ -23,7 +23,7 @@ const UserProfile = () => {
       const response = await fetch(url, options)
       const data = await response.json()
       setProfileDetails(data.profile_details)
-      console.log(profileDetails)
+      //   console.log(profileDetails)
       setLoading(false)
     }
 
