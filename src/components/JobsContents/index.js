@@ -19,30 +19,33 @@ const apiStatus = {
 const JobsContents = () => {
   const [jobsList, setJobsList] = useState([])
   const [currentApiStatus, setCurrentApiStatus] = useState(apiStatus.initial)
+  const [employmentType, setEmploymentType] = useState('')
+  const [minPackage, setPackage] = useState('')
+  const [searchInput, setInput] = useState('')
 
-  useEffect(() => {
-    const getJobsFromUrl = async () => {
-      setCurrentApiStatus(apiStatus.inProgress)
-      const url = 'https://apis.ccbp.in/jobs'
-      const options = {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
+ useEffect(()=>{
+     const getJobsFromUrl()
+ },[])
 
-      const res = await fetch(url, options)
-      const data = await res.json()
-      //   console.log(res)
-      if (res.ok === true) {
-        // console.log(data)
-        setJobsList(data.jobs)
-        setCurrentApiStatus(apiStatus.success)
-      }
+  const getJobsFromUrl = async () => {
+    setCurrentApiStatus(apiStatus.inProgress)
+    const url = `https://apis.ccbp.in/jobs?employment_type=${employmentType}&minimum_package=${minPackage}&search=${searchInput}`
+    const options = {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     }
 
-    getJobsFromUrl()
-  }, [])
+    const res = await fetch(url, options)
+    const data = await res.json()
+    //   console.log(res)
+    if (res.ok === true) {
+      // console.log(data)
+      setJobsList(data.jobs)
+      setCurrentApiStatus(apiStatus.success)
+    }
+  }
 
   const renderInProgressApiStatus = () => (
     <div>
@@ -80,11 +83,25 @@ const JobsContents = () => {
     }
   }
 
+  const getSearchInput = e => {
+    setInput(e.target.value)
+  }
+
+  const getJobsBySearchInput = () => {}
+
   return (
     <div className="jobs-right-container">
       <div className="search-container">
-        <input type="search" placeholder="search" className="search-input" />
-        <AiOutlineSearch className="search-image" />
+        <input
+          type="search"
+          placeholder="search"
+          className="search-input"
+          onChange={getSearchInput}
+        />
+        <AiOutlineSearch
+          className="search-image"
+          onClick={getJobsBySearchInput}
+        />
       </div>
       {getDataByApiStatus()}
     </div>

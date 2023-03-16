@@ -34,6 +34,7 @@
   color: #fff;
   height: 100%;
   background-color: #1f1e1e;
+  cursor: pointer;
 }
 
 .job-card-container {

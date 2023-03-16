@@ -1,6 +1,44 @@
 import UserProfile from '../UserProfile/userprofile'
 import './index.css'
 
+const employmentTypesList = [
+  {
+    label: 'Full Time',
+    employmentTypeId: 'FULLTIME',
+  },
+  {
+    label: 'Part Time',
+    employmentTypeId: 'PARTTIME',
+  },
+  {
+    label: 'Freelance',
+    employmentTypeId: 'FREELANCE',
+  },
+  {
+    label: 'Internship',
+    employmentTypeId: 'INTERNSHIP',
+  },
+]
+
+const salaryRangesList = [
+  {
+    salaryRangeId: '1000000',
+    label: '10 LPA and above',
+  },
+  {
+    salaryRangeId: '2000000',
+    label: '20 LPA and above',
+  },
+  {
+    salaryRangeId: '3000000',
+    label: '30 LPA and above',
+  },
+  {
+    salaryRangeId: '4000000',
+    label: '40 LPA and above',
+  },
+]
+
 const SideNav = () => (
   <aside className="aside-container">
     <div className="profile-container">
@@ -10,80 +48,37 @@ const SideNav = () => (
     <div className="type-employment-container">
       <p className="type-employment-text">Type of Employment</p>
       <ul className="employment-container">
-        <li>
-          <input type="checkbox" id="fulltime" className="checkbox" />
-          <label htmlFor="fulltime" className="label-text">
-            Full Time
-          </label>
-        </li>
-        <li>
-          <input type="checkbox" id="partTime" className="checkbox" />
-          <label htmlFor="partTime" className="label-text">
-            Part Time
-          </label>
-        </li>
-        <li>
-          <input type="checkbox" id="freelance" className="checkbox" />
-          <label htmlFor="freelance" className="label-text">
-            Freelance
-          </label>
-        </li>
-        <li>
-          <input type="checkbox" id="internship" className="checkbox" />
-          <label htmlFor="internship" className="label-text">
-            Internship
-          </label>
-        </li>
+        {employmentTypesList.map(eachItem => (
+          <li>
+            <input
+              type="checkbox"
+              id={eachItem.employmentTypeId}
+              className="checkbox"
+            />
+            <label htmlFor={eachItem.employmentTypeId} className="label-text">
+              {eachItem.label}
+            </label>
+          </li>
+        ))}
       </ul>
     </div>
     <hr />
     <div className="type-employment-container">
       <p className="type-employment-text">Type of Employment</p>
       <ul className="employment-container">
-        <li>
-          <input
-            type="radio"
-            id="10LPA"
-            className="checkbox"
-            name="radio-buttons"
-          />
-          <label htmlFor="10LPA" className="label-text">
-            10 LPA and above
-          </label>
-        </li>
-        <li>
-          <input
-            type="radio"
-            id="20LPA"
-            className="checkbox"
-            name="radio-buttons"
-          />
-          <label htmlFor="20LPA" className="label-text">
-            20 LPA and above
-          </label>
-        </li>
-        <li>
-          <input
-            type="radio"
-            id="30LPA"
-            className="checkbox"
-            name="radio-buttons"
-          />
-          <label htmlFor="30LPA" className="label-text">
-            30 LPA and above
-          </label>
-        </li>
-        <li>
-          <input
-            type="radio"
-            id="40LPA"
-            className="checkbox"
-            name="radio-buttons"
-          />
-          <label htmlFor="40LPA" className="label-text">
-            40 LPA and above
-          </label>
-        </li>
+        {salaryRangesList.map(eachItem => (
+          <li>
+            <input
+              type="radio"
+              id={eachItem.salaryRangeId}
+              className="checkbox"
+              name="radio-buttons"
+            />
+            <label htmlFor={eachItem.salaryRangeId} className="label-text">
+              {eachItem.label}
+            </label>
+          </li>
+        ))}
       </ul>
     </div>
   </aside>

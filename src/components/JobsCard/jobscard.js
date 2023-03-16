@@ -14,7 +14,7 @@ const JobsCard = props => {
 
   const getSuccessJobDetails = data => {
     const jobDescription = data
-    console.log(jobDescription)
+    // console.log(jobDescription)
     return <JobDetails fullDetails={jobDescription} />
   }
 
