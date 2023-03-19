@@ -1,52 +1,18 @@
-import Cookies from 'js-cookie'
+import {Link} from 'react-router-dom'
 import {AiFillStar} from 'react-icons/ai'
 import {GoLocation} from 'react-icons/go'
 import {FaBusinessTime} from 'react-icons/fa'
 
 import './jobcard.css'
-import JobDetails from '../../pages/JobDetails/jobdetails'
-
-const jwtToken = Cookies.get('jwt_token')
 
 const JobsCard = props => {
   const {details} = props
   //   console.log(details)
-
-  const getSuccessJobDetails = data => {
-    const jobDescription = data
-    // console.log(jobDescription)
-    return <JobDetails fullDetails={jobDescription} />
-  }
-
-  const getFailureJobDetails = () => {}
-
-  const onClickGetJobId = async () => {
-    const {id} = details
-    // console.log(id)
-    const url = `https://apis.ccbp.in/jobs/${id}`
-    const options = {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearrer ${jwtToken}`,
-      },
-    }
-
-    const res = await fetch(url, options)
-    const data = await res.json()
-    if (res.ok === true) {
-      getSuccessJobDetails(data)
-    } else {
-      getFailureJobDetails()
-    }
-  }
+  const {id} = details
 
   return (
-    <li className="job-card">
-      <button
-        type="button"
-        className="list-job-button"
-        onClick={onClickGetJobId}
-      >
+    <Link to={`/jobs/${id}`}>
+      <li className="job-card list-job-button">
         <div className="job-header-container">
           <div className="job-name-image">
             <img
@@ -83,8 +49,8 @@ const JobsCard = props => {
           <h2>Description</h2>
           <p>{details.job_description}</p>
         </div>
-      </button>
-    </li>
+      </li>
+    </Link>
   )
 }
 

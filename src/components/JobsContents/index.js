@@ -23,42 +23,34 @@ const JobsContents = () => {
   const [minPackage, setPackage] = useState('')
   const [searchInput, setInput] = useState('')
 
- useEffect(()=>{
-     const getJobsFromUrl()
- },[])
+  useEffect(() => {
+    const getJobsFromUrl = async () => {
+      setCurrentApiStatus(apiStatus.inProgress)
+      const url = `https://apis.ccbp.in/jobs?employment_type=${employmentType}&minimum_package=${minPackage}&search=${searchInput}`
+      const options = {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
 
-  const getJobsFromUrl = async () => {
-    setCurrentApiStatus(apiStatus.inProgress)
-    const url = `https://apis.ccbp.in/jobs?employment_type=${employmentType}&minimum_package=${minPackage}&search=${searchInput}`
-    const options = {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+      const res = await fetch(url, options)
+      const data = await res.json()
+      //   console.log(res)
+      if (res.ok === true) {
+        // console.log(data)
+        setJobsList(data.jobs)
+        setCurrentApiStatus(apiStatus.success)
+      }
     }
-
-    const res = await fetch(url, options)
-    const data = await res.json()
-    //   console.log(res)
-    if (res.ok === true) {
-      // console.log(data)
-      setJobsList(data.jobs)
-      setCurrentApiStatus(apiStatus.success)
-    }
-  }
+    getJobsFromUrl()
+  }, [])
 
   const renderInProgressApiStatus = () => (
     <div>
       <Loader type="ThreeDots" color="#4f46e5" width={50} height={50} />
     </div>
   )
-
-  //   const getJobDetailsById = data => {
-  //     const details = data.job_details
-  //     const jobs = data.similar_jobs
-
-  //     return <JobDetails key={details.id} details={details} jobs={jobs} />
-  //   }
 
   const renderSuccessApiStatus = () => (
     <ul className="job-card-container">
