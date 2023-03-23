@@ -46,7 +46,7 @@ const SideNav = () => (
     </div>
     <hr />
     <div className="type-employment-container">
-      <p className="type-employment-text">Type of Employment</p>
+      <h1 className="type-employment-text">Type of Employment</h1>
       <ul className="employment-container">
         {employmentTypesList.map(eachItem => (
           <li>
@@ -64,7 +64,7 @@ const SideNav = () => (
     </div>
     <hr />
     <div className="type-employment-container">
-      <p className="type-employment-text">Type of Employment</p>
+      <h1 className="type-employment-text">Salary Range</h1>
       <ul className="employment-container">
         {salaryRangesList.map(eachItem => (
           <li>

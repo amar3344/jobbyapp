@@ -11,10 +11,12 @@ const Navbar = props => {
   }
   return (
     <nav className="nav-container">
-      <img
-        src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-        alt="website logo"
-      />
+      <Link to="/">
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+          alt="website logo"
+        />
+      </Link>
       <ul className="nav-buttons">
         <li>
           <Link to="/" className="nav-links">

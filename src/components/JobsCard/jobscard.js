@@ -11,13 +11,13 @@ const JobsCard = props => {
   const {id} = details
 
   return (
-    <Link to={`/jobs/${id}`}>
-      <li className="job-card list-job-button">
+    <Link to={`/jobs/${id}`} style={{textDecoration: 'none'}}>
+      <li className="job-card">
         <div className="job-header-container">
           <div className="job-name-image">
             <img
               src={details.company_logo_url}
-              alt={details.employment_type}
+              alt="company logo"
               className="image-logo"
             />
             <div className="title-rating">

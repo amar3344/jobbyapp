@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Jobs from './pages/Jobs'
 import ProtectedRoute from './components/ProtectedRoute'
 import JobDetails from './pages/JobDetails/jobdetails'
+import NotFound from './pages/NotFound/notfound'
 
 import './App.css'
 
@@ -48,6 +49,7 @@ import './App.css'
 // ]
 
 // Replace your code here
+
 const App = () => (
   <div className="react-app">
     <Switch>
@@ -55,6 +57,7 @@ const App = () => (
       <ProtectedRoute exact path="/" component={Home} />
       <ProtectedRoute exact path="/jobs" component={Jobs} />
       <ProtectedRoute exact path="/jobs/:id" component={JobDetails} />
+      <Route component={NotFound} />
     </Switch>
   </div>
 )

@@ -5,6 +5,7 @@
   align-items: center;
   padding: 5px;
   height: 60px;
+  width: 100%;
 }
 
 .nav-container img {
