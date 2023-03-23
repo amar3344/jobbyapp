@@ -13,6 +13,9 @@ const Jobs = () => (
       <div className="left-side-container">
         <SideNav />
       </div>
+      <div className="mobile-job-content-container">
+        <SideNav />
+      </div>
       <div className="right-side-container">
         <JobsContents />
       </div>

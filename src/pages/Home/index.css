@@ -11,11 +11,36 @@
   margin: 0px;
 }
 
+@media (max-width: 576px) {
+  .home-container {
+    width: 300px;
+  }
+}
+
 .content-container {
   background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
   background-size: cover;
   min-height: calc(100% - 60px);
   padding: 100px 50px;
+}
+
+@media (max-width: 576px) {
+  .content-container {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .mobile-content-container {
+    display: none;
+  }
+}
+
+.mobile-content-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
+  background-size: cover;
+  height: calc(100% - 35px);
+  padding: 0px 20px;
 }
 
 .navbar-container {

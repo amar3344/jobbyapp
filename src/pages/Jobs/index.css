@@ -21,6 +21,18 @@
   height: 100%;
 }
 
+@media (max-width: 576px) {
+  .left-side-container {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .mobile-job-content-container {
+    display: none;
+  }
+}
+
 .right-side-container {
   width: calc(100% - 200px);
 }
