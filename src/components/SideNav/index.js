@@ -1,4 +1,6 @@
 import UserProfile from '../UserProfile/userprofile'
+import SalaryRangeList from '../SalaryRangeList/slarayrange'
+import EmploymentTypeList from '../EmploymentTypeList'
 import './index.css'
 
 const employmentTypesList = [
@@ -49,16 +51,10 @@ const SideNav = () => (
       <h1 className="type-employment-text">Type of Employment</h1>
       <ul className="employment-container">
         {employmentTypesList.map(eachItem => (
-          <li>
-            <input
-              type="checkbox"
-              id={eachItem.employmentTypeId}
-              className="checkbox"
-            />
-            <label htmlFor={eachItem.employmentTypeId} className="label-text">
-              {eachItem.label}
-            </label>
-          </li>
+          <EmploymentTypeList
+            key={eachItem.employmentTypeId}
+            employmentList={eachItem}
+          />
         ))}
       </ul>
     </div>
@@ -67,17 +63,10 @@ const SideNav = () => (
       <h1 className="type-employment-text">Salary Range</h1>
       <ul className="employment-container">
         {salaryRangesList.map(eachItem => (
-          <li>
-            <input
-              type="radio"
-              id={eachItem.salaryRangeId}
-              className="checkbox"
-              name="radio-buttons"
-            />
-            <label htmlFor={eachItem.salaryRangeId} className="label-text">
-              {eachItem.label}
-            </label>
-          </li>
+          <SalaryRangeList
+            key={eachItem.salaryRangeId}
+            salaryRange={eachItem}
+          />
         ))}
       </ul>
     </div>

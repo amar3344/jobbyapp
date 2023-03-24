@@ -110,7 +110,7 @@ const JobDetails = props => {
         </div>
       </div>
       <h3 className="similar-jobs-heading">Similar Jobs</h3>
-      <ul>
+      <ul className="skills-container">
         {similarJobs.map(eachJob => (
           <SimilarJobs similarJobDetails={eachJob} key={eachJob.id} />
         ))}

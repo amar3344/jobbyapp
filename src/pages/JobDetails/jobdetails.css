@@ -41,6 +41,7 @@
   flex-wrap: wrap;
   margin: 0px;
   padding: 0px;
+  list-style: none;
 }
 
 .skills-image {
